@@ -105,21 +105,21 @@ void publishMarkerArrow(double x, double y, double roll,double pitch, double yaw
 Function that reads a message of type sensor_msgs::CameraInfo and saves camera matrix and distortion to matrices as are required by OpenCV functions.
 ```cpp
 	cv::Mat cameraMatrix;
-    cv::Mat distortionCoeffs;
+   	cv::Mat distortionCoeffs;
 
 	void camInfoCallback(const sensor_msgs::CameraInfoConstPtr &msg){
-      std::vector<double> dist = msg->D;
-      cv::Mat distortionCoeffs_l = cv::Mat(1, msg->D.size(), cv::CV_64FC1, &dist[0]);
+	      std::vector<double> dist = msg->D;
+	      cv::Mat distortionCoeffs_l = cv::Mat(1, msg->D.size(), cv::CV_64FC1, &dist[0]);
 
-      double cam_array[9];
-      std::copy(msg->K.begin(),msg->K.end(), std::begin(cam_array));
-      cv::Mat cameraMatrix_l = cv::Mat(3,3, CV_64FC1, &cam_array);
-      
-      distCoeffs_l.copyTo(distCoeffs); //TODO: without that additional copy they become strange when function gets out of scope
-      cameraMatrix_l.copyTo(cameraMatrix);
+	      double cam_array[9];
+	      std::copy(msg->K.begin(),msg->K.end(), std::begin(cam_array));
+	      cv::Mat cameraMatrix_l = cv::Mat(3,3, CV_64FC1, &cam_array);
 
-      ROS_INFO("Got calibration parameters");
-      ROS_INFO_STREAM("Distortion coefs:" <<distortionCoeffs);
-      ROS_INFO_STREAM("Camera matrix:"<<cameraMatrix);
-}
+	      distCoeffs_l.copyTo(distCoeffs); //TODO: without that additional copy they become strange when function gets out of scope
+	      cameraMatrix_l.copyTo(cameraMatrix);
+
+	      ROS_INFO("Got calibration parameters");
+	      ROS_INFO_STREAM("Distortion coefs:" <<distortionCoeffs);
+	      ROS_INFO_STREAM("Camera matrix:"<<cameraMatrix);
+	}
 ```
