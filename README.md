@@ -123,3 +123,8 @@ Function that reads a message of type sensor_msgs::CameraInfo and saves camera m
 	      ROS_INFO_STREAM("Camera matrix:"<<cameraMatrix);
 	}
 ```
+
+------
+### One master over network
+Script that lets you easily set up one master over multiple PCs.
+[click this link](https://github.com/JanezCim/ROS_over_network/blob/master/one_master.bash)
