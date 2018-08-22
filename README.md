@@ -124,6 +124,14 @@ Function that reads a message of type sensor_msgs::CameraInfo and saves camera m
 	}
 ```
 
+-------
+### std_srvs
+Simple service definitions [link](http://wiki.ros.org/std_srvs)
+
+------
+### Message filters
+Synchronize multiple topics to one callback funciton [link](http://wiki.ros.org/message_filters#Time_Synchronizer)
+
 ------
 ### One master over network
 Script that lets you easily set up one master over multiple PCs.
