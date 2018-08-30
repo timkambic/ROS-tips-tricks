@@ -1,3 +1,7 @@
+#include <signal.h>
+#include <wait.h>
+#include "ros/ros.h"
+
 void launchROSLAUNCH(std::string &ros_distribution,std::vector<std::string> command){ // convert command arguments from vector<string> to char* [] and call execv
 		std::string path_to_roslaunch = "/opt/ros/" + ros_distribution + "/bin/roslaunch"; // path where roslaunch executable is located
 		auto **argv = new const char* [command.size()+2];   // +2 is extra room for program name and sentinel
