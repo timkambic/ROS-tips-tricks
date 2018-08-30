@@ -124,6 +124,17 @@ Function that reads a message of type sensor_msgs::CameraInfo and saves camera m
 	}
 ```
 
+------
+### Disable image transport plugins
+If you want to disable compression and theora set following parameters:
+```
+	<rosparam param="/camera_topic/image_raw/disable_pub_plugins">
+		- 'image_transport/compressedDepth'
+		- 'image_transport/theora'
+		- 'image_transport/compressed'
+	</rosparam>
+```
+
 -------
 ### std_srvs
 Simple service definitions [link](http://wiki.ros.org/std_srvs)
