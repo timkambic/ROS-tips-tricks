@@ -54,7 +54,7 @@ ros::Publisher pub_marker = nh.advertise<visualization_msgs::Marker>("/markers",
 void publishMarker(double x, double y, int id, double color){
 	visualization_msgs::Marker marker;
 	marker.header.frame_id = "laser";
-	marker.header.stamp = ros::Time();
+	marker.header.stamp = ros::Time::now();
 	marker.id = id;
 	marker.type = visualization_msgs::Marker::SPHERE;
 	marker.action = visualization_msgs::Marker::ADD;
@@ -79,7 +79,7 @@ void publishMarker(double x, double y, int id, double color){
 void publishMarkerArrow(double x, double y, double roll,double pitch, double yaw, int id){
 	visualization_msgs::Marker marker;
 	marker.header.frame_id = "laser";
-	marker.header.stamp = ros::Time();
+	marker.header.stamp = ros::Time::now();
 	marker.id = id;
 	marker.type = visualization_msgs::Marker::ARROW;
 	marker.action = visualization_msgs::Marker::ADD;
