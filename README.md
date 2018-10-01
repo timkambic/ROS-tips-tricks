@@ -134,7 +134,14 @@ If you want to disable compression and theora set following parameters:
 		- 'image_transport/compressed'
 	</rosparam>
 ```
-
+-------
+### List plugins
+How to list all plugins for costmap/move_base/nodelets
+```
+rospack plugins --attrib=plugin costmap_2d
+rospack plugins --attrib=plugin nav_core
+rospack plugins --attrib=plugin nodelet
+```
 -------
 ### std_srvs
 Simple service definitions [link](http://wiki.ros.org/std_srvs)
