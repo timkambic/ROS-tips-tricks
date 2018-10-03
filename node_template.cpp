@@ -11,13 +11,14 @@ public:
     MyClass(){
         ros::NodeHandle n;
         ros::NodeHandle np("~");
+        parameter1 = 0.5
         np.getParam("parameter1", parameter1);
         data_pub = n.advertise<std_msgs::String>("data_out",10);
         data_sub = n.subscribe("data",10,&MyClass::dataCB,this);
     }
 
 private:
-    dataCB(const std_msgs::String::ConstPtr &msg){
+    void dataCB(const std_msgs::String::ConstPtr &msg){
         data_pub.publish(msg);
     }
 };
