@@ -154,3 +154,7 @@ Synchronize multiple topics to one callback funciton [link](http://wiki.ros.org/
 ### One master over network
 Script that lets you easily set up one master over multiple PCs.
 [click this link](https://github.com/JanezCim/ROS_over_network/blob/master/one_master.bash)
+
+------
+### Use arg/env/... in .yaml
+`subst_value=true` Allows use of substitution args in the YAML text when loaded with `<rosparam command="load" .../>
