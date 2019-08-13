@@ -158,3 +158,42 @@ Script that lets you easily set up one master over multiple PCs.
 ------
 ### Use arg/env/... in .yaml
 `subst_value=true` Allows use of substitution args in the YAML text when loaded with `<rosparam command="load" .../>
+
+### Set image as texture in URDF model
+add to package.xml
+```
+<exec_depend>gazebo_ros</exec_depend>
+<export>
+  <gazebo_ros gazebo_media_path="${prefix}"/>
+</export>
+```
+In urdf model add 
+```
+<gazebo reference="marker_link">
+            <material>Marker46Material</material>
+</gazebo>
+```
+
+In package add 
+```
+-media/materials/scripts/example.materials
+-media/materials/textures/marker.png
+```
+Where `example.materials` is 
+```
+material Marker46Material{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture marker.png
+            }
+        }
+    }
+}
+```
+
+
+
